@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Temperature-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="TemperatureViewController" customModule="Assignment_1_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="temperature" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIe-lN-p7m">
+                                <rect key="frame" x="56.5" y="28" width="262.5" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Wee-Wx-2CG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6e6-wM-dut">
+                                <rect key="frame" x="76" y="96" width="223" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert °C to °F"/>
+                                <connections>
+                                    <action selector="convertCelsiusToFahrenheit:" destination="9pv-A4-QxB" eventType="touchDown" id="bda-pu-oSA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6h7-UP-M8B">
+                                <rect key="frame" x="76" y="155" width="223" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert °F to °C"/>
+                                <connections>
+                                    <action selector="convertFahrenheitToCelsius:" destination="9pv-A4-QxB" eventType="touchDown" id="pCB-TY-Heg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-lw-Keb">
+                                <rect key="frame" x="187.5" y="214" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6h7-UP-M8B" firstAttribute="centerX" secondItem="LIe-lN-p7m" secondAttribute="centerX" id="A4i-Jj-VJe"/>
+                            <constraint firstItem="LIe-lN-p7m" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="8" id="CcP-fq-16d"/>
+                            <constraint firstItem="6h7-UP-M8B" firstAttribute="top" secondItem="6e6-wM-dut" secondAttribute="bottom" constant="8" id="MZu-1l-meZ"/>
+                            <constraint firstItem="EUa-lw-Keb" firstAttribute="top" secondItem="6h7-UP-M8B" secondAttribute="bottom" constant="8" id="NUX-4y-GBU"/>
+                            <constraint firstItem="6e6-wM-dut" firstAttribute="top" secondItem="LIe-lN-p7m" secondAttribute="bottom" constant="8" id="PPF-rS-eph"/>
+                            <constraint firstItem="LIe-lN-p7m" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="PQb-hf-3fa"/>
+                            <constraint firstItem="6e6-wM-dut" firstAttribute="centerX" secondItem="LIe-lN-p7m" secondAttribute="centerX" id="RBd-pt-vgR"/>
+                            <constraint firstItem="EUa-lw-Keb" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="vLJ-Ms-tBM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Yft-a2-Kvf" appends="YES" id="XYs-ZO-AQb"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Temperature" image="temperature" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tempLabel" destination="EUa-lw-Keb" id="Bjc-wc-42h"/>
+                        <outlet property="tempTextField" destination="LIe-lN-p7m" id="beS-Mi-1VC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Yft-a2-Kvf">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="9pv-A4-QxB" id="cRZ-sX-DQF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-483.50824587706148"/>
+        </scene>
+        <!--Distance-->
+        <scene sceneID="J7c-c1-ntC">
+            <objects>
+                <viewController id="hc5-cM-sTA" customClass="DistanceViewController" customModule="Assignment_1_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ac2-UK-iXT" customClass="distance">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="distance" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gp1-Hu-I3Y">
+                                <rect key="frame" x="62.5" y="28" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="ehY-k0-Z7P"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lga-dr-vsW">
+                                <rect key="frame" x="49" y="96" width="277" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert KM to Miles"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWd-Pu-av9">
+                                <rect key="frame" x="49" y="155" width="277" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert Miles to KM"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22f is 30c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-e9-h8O">
+                                <rect key="frame" x="133" y="214" width="109" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gp1-Hu-I3Y" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="4K8-0w-ZQt"/>
+                            <constraint firstItem="8nF-e9-h8O" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="6Iu-Xq-3Kr"/>
+                            <constraint firstItem="mWd-Pu-av9" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="Uek-WY-v37"/>
+                            <constraint firstItem="Gp1-Hu-I3Y" firstAttribute="top" secondItem="nUe-8t-7JJ" secondAttribute="top" constant="8" id="Va4-1t-dbP"/>
+                            <constraint firstItem="Lga-dr-vsW" firstAttribute="top" secondItem="Gp1-Hu-I3Y" secondAttribute="bottom" constant="8" id="W4b-36-ILf"/>
+                            <constraint firstItem="Lga-dr-vsW" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="XB8-7S-UhT"/>
+                            <constraint firstItem="8nF-e9-h8O" firstAttribute="top" secondItem="mWd-Pu-av9" secondAttribute="bottom" constant="8" id="hh6-5f-dDA"/>
+                            <constraint firstItem="mWd-Pu-av9" firstAttribute="top" secondItem="Lga-dr-vsW" secondAttribute="bottom" constant="8" id="qWE-2b-IGg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nUe-8t-7JJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Distance" image="ruler" id="wnc-ip-NQh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mmv-vy-SyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1142"/>
+        </scene>
+        <!--Currency-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="CurrencyViewController" customModule="Assignment_1_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="amount" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua7-H0-zJQ">
+                                <rect key="frame" x="62.5" y="28" width="250" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0zc-HN-G7b"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-jz-5lI">
+                                <rect key="frame" x="44" y="96" width="287" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert CAD to USD"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkd-9K-csY">
+                                <rect key="frame" x="44" y="155" width="287" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Convert USD to CAD"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22f is 30c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-aY-GxP">
+                                <rect key="frame" x="133" y="214" width="109" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ua7-H0-zJQ" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="8oo-4L-CfY"/>
+                            <constraint firstItem="YUv-jz-5lI" firstAttribute="centerX" secondItem="Ua7-H0-zJQ" secondAttribute="centerX" id="8wa-f9-vD8"/>
+                            <constraint firstItem="YUv-jz-5lI" firstAttribute="top" secondItem="Ua7-H0-zJQ" secondAttribute="bottom" constant="8" id="JdO-c1-JJZ"/>
+                            <constraint firstItem="Zkd-9K-csY" firstAttribute="centerX" secondItem="Ua7-H0-zJQ" secondAttribute="centerX" id="OK6-sL-YId"/>
+                            <constraint firstItem="Zkd-9K-csY" firstAttribute="centerX" secondItem="YUv-jz-5lI" secondAttribute="centerX" id="OOR-qk-jzw"/>
+                            <constraint firstItem="Zkd-9K-csY" firstAttribute="centerX" secondItem="YUv-jz-5lI" secondAttribute="centerX" id="Xih-We-rZL"/>
+                            <constraint firstItem="Ua7-H0-zJQ" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="8" id="apH-lH-ENC"/>
+                            <constraint firstItem="fhn-aY-GxP" firstAttribute="top" secondItem="Zkd-9K-csY" secondAttribute="bottom" constant="8" id="fQN-ik-c06"/>
+                            <constraint firstItem="fhn-aY-GxP" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="jGE-VH-4wm"/>
+                            <constraint firstItem="Zkd-9K-csY" firstAttribute="top" secondItem="YUv-jz-5lI" secondAttribute="bottom" constant="8" id="mCw-qV-sG7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Currency" image="dollar" id="cPa-gy-q4n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="358"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="hc5-cM-sTA" kind="relationship" relationship="viewControllers" id="O5i-oL-sao"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-569" y="359"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dollar" width="25" height="25"/>
+        <image name="ruler" width="25" height="25"/>
+        <image name="temperature" width="48" height="32"/>
+    </resources>
+</document>
