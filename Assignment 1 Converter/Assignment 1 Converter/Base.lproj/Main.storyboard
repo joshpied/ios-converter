@@ -103,20 +103,27 @@
                                 <rect key="frame" x="49" y="96" width="277" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Convert KM to Miles"/>
+                                <connections>
+                                    <action selector="convertKmToMiles:" destination="hc5-cM-sTA" eventType="touchDown" id="8Vy-Oz-djn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWd-Pu-av9">
                                 <rect key="frame" x="49" y="155" width="277" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Convert Miles to KM"/>
+                                <connections>
+                                    <action selector="convertMilesToKm:" destination="hc5-cM-sTA" eventType="touchDown" id="dw9-BH-RHd"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22f is 30c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-e9-h8O">
-                                <rect key="frame" x="133" y="214" width="109" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nF-e9-h8O">
+                                <rect key="frame" x="187.5" y="214" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Gp1-Hu-I3Y" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="4K8-0w-ZQt"/>
                             <constraint firstItem="8nF-e9-h8O" firstAttribute="centerX" secondItem="Ac2-UK-iXT" secondAttribute="centerX" id="6Iu-Xq-3Kr"/>
@@ -128,10 +135,22 @@
                             <constraint firstItem="mWd-Pu-av9" firstAttribute="top" secondItem="Lga-dr-vsW" secondAttribute="bottom" constant="8" id="qWE-2b-IGg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nUe-8t-7JJ"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="a5y-ZN-hcI" appends="YES" id="aPF-hr-w0o"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Distance" image="ruler" id="wnc-ip-NQh"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="8nF-e9-h8O" id="A0u-iC-nju"/>
+                        <outlet property="distanceTextField" destination="Gp1-Hu-I3Y" id="Xj0-tC-MBy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmv-vy-SyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a5y-ZN-hcI">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="hc5-cM-sTA" id="BeB-9G-Tuo"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="750" y="1142"/>
         </scene>
@@ -156,11 +175,17 @@
                                 <rect key="frame" x="44" y="96" width="287" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Convert CAD to USD"/>
+                                <connections>
+                                    <action selector="convertCanadianToAmerican:" destination="8rJ-Kc-sve" eventType="touchDown" id="NWg-xQ-ht5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkd-9K-csY">
                                 <rect key="frame" x="44" y="155" width="287" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Convert USD to CAD"/>
+                                <connections>
+                                    <action selector="convertAmericanToCanadian:" destination="8rJ-Kc-sve" eventType="touchDown" id="vT4-nh-qGy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22f is 30c" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhn-aY-GxP">
                                 <rect key="frame" x="133" y="214" width="109" height="30"/>
@@ -185,6 +210,10 @@
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency" image="dollar" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="fhn-aY-GxP" id="L5g-SK-vdv"/>
+                        <outlet property="amountTextField" destination="Ua7-H0-zJQ" id="QYK-sa-74P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
